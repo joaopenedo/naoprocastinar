@@ -55,7 +55,20 @@
   <div class="container">
     <h1>Ei! Isso não vai te ajudar.</h1>
     <p>Você veio aqui buscar distração, mas lembre-se: seu tempo é precioso.<br>Use-o para construir o futuro que você quer viver.</p>
-    <button class="btn" onclick="window.close()">Voltar ao foco</button>
+    <button class="btn" onclick="closeWindow()">Voltar ao foco</button>
   </div>
+
+  <script>
+    function closeWindow() {
+      // Tenta fechar a guia
+      window.close();
+      
+      // Se o fechamento não funcionar, tenta redirecionar
+      // (isso serve como fallback caso a aba não seja fechada)
+      setTimeout(function() {
+        window.location.href = 'https://joaopenedo.github.io/naoprocastinar/';
+      }, 1000); // Redireciona após 1 segundo
+    }
+  </script>
 </body>
 </html>
