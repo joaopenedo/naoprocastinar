@@ -55,10 +55,21 @@
   <div class="container">
     <h1>Ei! Isso não vai te ajudar.</h1>
     <p>Você veio aqui buscar distração, mas lembre-se: seu tempo é precioso.<br>Use-o para construir o futuro que você quer viver.</p>
+    <p><strong>Acessos registrados:</strong> <span id="accessCounter">0</span></p>
     <button class="btn" onclick="closeWindow()">Voltar ao foco</button>
   </div>
 
   <script>
+    // Recupera o contador de acessos do localStorage, ou define como 0 se não existir
+    let accessCount = localStorage.getItem('accessCount') || 0;
+    
+    // Exibe o contador na página
+    document.getElementById('accessCounter').textContent = accessCount;
+    
+    // Incrementa o contador e salva no localStorage
+    accessCount++;
+    localStorage.setItem('accessCount', accessCount);
+
     function closeWindow() {
       // Tenta fechar a guia
       window.close();
